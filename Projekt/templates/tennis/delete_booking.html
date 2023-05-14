@@ -1,0 +1,16 @@
+{% extends 'tennis/base.html'%}
+{% load static %}
+
+{%  block content %}
+    <h2>Delete a reservation</h2>
+    <div id="box"></div>
+    <div class="form">
+    <form method="post">
+    {% csrf_token %}
+        {{ form }}
+    <strong>Are you sure you want to cancel your reservation?</strong><br><br>
+    <input type="submit" value="Cancel"><br><br>
+        <a href="{% url 'profil' %}">Go back to profile.</a>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% autoescape off %}
+Hello,
+
+we received your visit booking. Here are the details of your reservation:
+
+Reservation for: {{ name }} {{ last_name }}
+Date: {{ date }} {{ hour }}
+Court: {{ court }}
+Coach: {{ coach }}
+
+Sincerely,
+The Website Team
+
+{% endautoescape %}

@@ -1,0 +1,53 @@
+{% extends 'tennis/base.html' %}
+
+{% block content %}
+    <h2>This is your profile, {{ user.username }}</h2>
+    <div id="data_table">
+    <h4>Your personal data:</h4>
+    <table>
+    <tr>
+        <td>First name:</td>
+        <td>Last name:</td>
+        <td>Email:</td>
+    </tr>
+    <tr>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+    </tr>
+    </table>
+    </div>
+    {% if reservations %}
+    <div id="reserv_table">
+    <h4>Your reservations:</h4>
+    <table>
+        <tr>
+            <td> First name</td>
+            <td> Last name</td>
+            <td> Date </td>
+            <td> Hour </td>
+            <td> Court </td>
+            <td> Coach </td>
+        </tr>
+        {% for reser in reservations %}
+        <tr>
+            <td>{{ reser.name }}</td>
+            <td>{{ reser.surname }}</td>
+            <td>{{ reser.date}}</td>
+            <td>{{ reser.hour }}</td>
+            <td>{{ reser.court.type }}</td>
+            <td>{{ reser.coach}}</td>
+            <td> <a href="{% url 'update_booking' reser.pk %}">Edit</a></td>
+            <td><a href="{% url 'delete_booking' reser.pk %}">Cancel</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+        </div>
+    {% endif %}
+    <h4> <a href="{% url 'discounts' %}">Check active discounts</a> </h4>
+    <h4><a href="{% url 'password_change' %}">Change password</a></h4>
+    <h4><a href="{% url 'logout' %}">Logout</a></h4>
+
+
+
+{% endblock %}

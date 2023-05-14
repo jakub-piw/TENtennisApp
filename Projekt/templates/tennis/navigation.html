@@ -1,0 +1,51 @@
+{% load static %}
+
+<div id="pasek">
+    <table>
+        <tr>
+            <td rowspan="3" style="width:20vw">
+                <img id="logo" src="{% static 'images/logo2.png' %}" alt="logo">
+            </td>
+            <td colspan="4"> <br> <hr/> </td>
+            <td>
+                {% if user.is_authenticated %}
+                    Welcome, {{ user.username }}!
+                {% else %}
+                    <br> <hr/>
+                {% endif %}
+            </td>
+        </tr>
+        <tr style="border-radius: 40pt; background-color: rgba(255,225,225,0.3);">
+            <td >
+                <a class="collapse-item" href="{% url 'home' %}">Home</a>
+            </td>
+            <td>
+                <a class="collapse-item" href="{% url 'courts' %}">Courts</a>
+            </td>
+            <td>
+                <a class="collapse-item" href="{% url 'trenerzy' %}">Coaches</a>
+            </td>
+            <td>
+                <a href="{% url 'booking' %}">Booking</a>
+            </td>
+            <td>
+                {% if user.is_authenticated %}
+                    <a href ="{% url 'profil' %}">Profile</a>
+
+                {% else %}
+                    <a class="collapse-item" href="{% url 'login' %}">Login</a>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"> <hr/>  <br> </td>
+            <td>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                     <hr/> <br>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</div>

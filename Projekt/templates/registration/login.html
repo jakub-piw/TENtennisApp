@@ -1,0 +1,24 @@
+{% extends 'tennis/base.html' %}
+
+{% block content %}
+<h2>Login</h2>
+    <div class="form">
+<form method="post">
+    {% csrf_token %}
+    <p> <label for="{{ form.username.id_for_label }}">Username:</label>  {{ form.username }} </p>
+    <p> <label for="{{ form.password.id_for_label }}">Password:</label> {{ form.password }}</p>
+    <div class="form_error">
+        {{ form.non_field_errors }}
+        {{ form.username.errors}}
+        {{ form.password.errors}}
+    </div>
+    <input type="submit" value="Login">
+    <br><br>
+</form>
+    </div>
+
+     <p class="text-center">Don't have an account?<a href="{% url 'register' %}"> Create an account</a>.</p>
+    Forgot your password? <a href="{% url 'password_reset' %}">Reset password with email.</a>
+
+
+{% endblock %}

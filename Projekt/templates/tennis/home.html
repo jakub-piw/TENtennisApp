@@ -1,0 +1,99 @@
+{% extends "tennis/base.html" %}
+{%  load static %}
+
+{% block content %}
+    <h2> Welcome to TENtenis club! </h2>
+    <div class="aboutus">
+        <table>
+        <tr>
+            <td style="width: 25vw;"><img id="logo" src="{% static 'images/player.png' %}" alt="tennis_image"></td>
+            <td>
+                <p>
+                The <B>TENTennis Club</B> is a premier tennis
+                facility located in the heart of the city.
+                Founded in 1995, it has been a fixture in the community for years.
+                It features 12 outdoor courts, 4 indoor hard courts.
+                The club also offers a variety of programs and clinics for players of all ages and skill levels,
+                as well as a pro shop, lounge area and fitness center.
+                The TENTennis Club is known for its friendly and welcoming atmosphere,
+                making it a great place for both serious players and casual enthusiasts.
+                The Elmwood Tennis Club is a great choice for anyone looking to improve their
+                game or simply enjoy a day of tennis with friends and family.
+                </p>
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div class="aboutus">
+        <table>
+            <tr>
+                <td><p>
+                    As a member of the <B>TENTennis Club</B>, you'll have access to the club's top-notch facilities and programming.
+                    You'll be able to play on the club's courts, take part in the many programs and clinics offered,
+                    and utilize the practice wall, fitness center, and pro shop. The club also offers a variety of leagues
+                    and tournaments for members to participate in, providing opportunities to compete and challenge
+                    yourself against players of all skill levels. The club events and tournaments also creates great
+                    opportunity for members to socialize and make new friends with other tennis enthusiasts. <br> <br>
+                    <B><a href="{% url 'booking' %}">Book a visit</a> to our club right now! <br>
+                    <a href="{% url 'register' %}">Register</a> to get special discounts in our pro shop! <br>
+                    or get to know our <a href="{% url 'trenerzy' %}">training staff</a> and read about our
+                        <a href="{% url 'courts' %}">courts.</a>
+                    </B>
+                    </p>
+                </td>
+                <td style="width: 25vw;"><img id="logo" src="{% static 'images/player2.png' %}" alt="tennis_image"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="aboutus">
+        <table>
+            <tr>
+                <td style="width: 25vw;"><img id="logo" src="{% static 'images/golden_racket.png' %}" alt="tennis_image"></td>
+                <td>
+                    <p>
+                        The <B>TENTennis Club</B> is proud to announce that it has recently been awarded the
+                        <em>Golden Racket</em> award in "Best Tennis Club" category by the National Tennis Association.
+                        This prestigious honor recognizes the club's exceptional facilities, programming, and overall
+                        commitment to promoting and growing the sport of tennis in the community. The award is a
+                        testament to the hard work and dedication of the club's staff, coaches, and volunteers.
+                        The award win is a great achievement for the club, and serves as a validation of the club's
+                        efforts to provide the best tennis experience for its members and the community.
+                        The club's management and the staffs are thrilled to receive the recognition and will continue
+                        to work hard to make the <B>TENTennis Club</B> the go-to destination for tennis players in the region.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="aboutus">
+        <table>
+            <tr>
+                <td>
+                    <p>
+                    Here are a few examples of opinions from satisfied customers of the <B>TENTennis Club</B>:
+                    <ul>
+                    <li> <q> I've been a member of the <B>TENTennis Club</B> for over 5 years and I couldn't be happier.
+                        The facilities are top-notch and the staff is always friendly and welcoming.
+                        I've also really appreciated the wide range of programs and clinics offered,
+                            which have helped me improve my game.</q> - Ania </li>
+                        <li>
+                            <q>I joined the <B> TENTennis Club</B> last year and it's been an amazing experience.
+                                The coaches are knowledgeable and skilled, they have helped me so much to improve my game.
+                                The club also has a great community spirit and I've made some great friends.</q> - Tomek
+                        </li>
+                        <li>
+                            <q>
+                                The <B>TENTennis Club</B> is a fantastic place to play and improve your game.
+                                The staff are all very knowledgeable and friendly, the courts and facilities
+                                are top-notch and the schedule of events and clinics is always packed with fun
+                                and educational activities. I'm so glad I joined!"
+                            </q> - Krzysiek
+                        </li>
+                    </ul>
+                </td>
+                <td style="width: 25vw;"><img id="logo" src="{% static 'images/player3.png' %}" alt="tennis_image"></td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'tennis/base.html'%}
+{% load static %}
+
+{%  block content %}
+    <h2>Edit a reservation</h2>
+    <div id="box"></div>
+    <div class="form">
+    <form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><label for="{{form.name.id_for_label }}">First name:</label></td>
+            <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+            <td><label for="{{form.surname.id_for_label }}">Last name:</label></td>
+            <td>{{ form.surname }}</td>
+        </tr>
+        <tr>
+            <td><label for="{{form.court.id_for_label }}">Court:</label></td>
+            <td>{{ form.court }}</td>
+        </tr>
+        <tr>
+            <td><label for="{{form.coach.id_for_label }}">Coach:</label></td>
+            <td>{{ form.coach }}</td>
+        </tr>
+        <tr>
+            <td><label for="{{form.date.id_for_label}}">Date:</label></td>
+            <td>{{ form.date }}</td>
+        </tr>
+        <tr>
+            <td><label for="{{form.hour.id_for_label }}">Hour:</label></td>
+            <td>{{ form.hour }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="form_error">
+                    {{ form.non_field_errors }}
+                    {{ form.name.errors}}
+                    {{ form.surname.errors}}
+                    {{ form.court.errors}}
+                    {{ form.coach.errors}}
+                    {{ form.date.errors}}
+                    {{ form.hour.errors}}
+                </div>
+            </td>
+        </tr>
+        <tr><td colspan="3"><input type="submit" value="Update a reservation"></td></tr>
+    </table>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "tennis/base.html" %}
+
+{% block content %}
+   <h2>Coaches</h2>
+    <p> The heart of TENtennis club is primarly our coaching staff. Our trainers have enormous
+        experience, not only with our clients, but also with professional players from all over the world.
+        In our team thera are former coaches of tennis stars and graduates of the most prestigious sports academies.
+    </p>
+
+    {% for coach in list_of_coaches %}
+        <div class="coachdiv">
+            <table>
+                <tr>
+                    <td rowspan="5">
+                        <img class="coachimg" src="{{ coach.photo.url }}" alt="{{ coach.name }}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="coachname">{{ coach.name }} {{ coach.surname }}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="labelek"> Age: </span> {{ coach.age }} </td>
+                </tr>
+                <tr>
+                    <td> <span class="labelek"> Speciality: </span> {{ coach.special }}</td>
+                </tr>
+                <tr>
+                    <td> {{ coach.description }}</td>
+                </tr>
+            </table>
+        </div>
+    {%endfor%}
+{% endblock %}

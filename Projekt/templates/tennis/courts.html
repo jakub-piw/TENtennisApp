@@ -1,0 +1,39 @@
+{% extends 'tennis/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Our tennis courts</h2>
+    <p>
+        TENTennis Club gives posibility to rent courts of 3 different surfaces. Our clients
+        can play and practise, just like professional players. By using the latest
+        techniques of court surfaces maintanance methods, we are able to provide place for entertainment and
+        practice throughout the year.
+    </p>
+
+     {% for court in list_of_courts %}
+        <div class="courtdiv">
+            <table>
+                <tr>
+                    <td rowspan="4" style="width: 20vw;">
+                         <img class="courtimg" src="{{ court.photo.url }}" alt="{{ court.type }}"/>
+                    </td>
+                    <td><span id="court_type">{{ court.type }}</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="labelek"> Ball speed: </span> {{ court.speed }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="labelek"> Ball bounce: </span> {{ court.bounce }}
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan>{{ court.description }}</td>
+                </tr>
+            </table>
+        </div>
+    {%endfor%}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'tennis/base.html' %}
+
+{% block content %}
+    <h2>Thank you for you reservation!</h2>
+
+    <p>We've sent booking confirmation on provided email</p>
+    {% if user.is_authenticated %}
+        To check all your reservation, visit
+        <a href="{% url 'profil' %}">your profile</a>.
+    {% endif %}
+    <br>
+    <a href="{% url 'home' %}">Go back to homepage.</a>
+{% endblock %}

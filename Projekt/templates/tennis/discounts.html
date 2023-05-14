@@ -1,0 +1,27 @@
+{% extends 'tennis/base.html' %}
+
+{% block content%}
+    <h2>Active discounts</h2>
+    <p>Here you can find list of active product discounts.
+    Use code in our shop to get lower prices.</p>
+    {% for discount in discounts %}
+        <div class="discountdiv">
+            <table>
+                <tr>
+                    <td rowspan="5"><img src="{{ discount.photo.url }}" alt="{{ discount.product_type }}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <span id="productname">{{ discount.product_name }}</span></td></tr>
+                <tr>
+                    <td>Regular price:</td>
+                    <td>{{ discount.price }}</td></tr>
+                <tr>
+                    <td>Discount price:</td>
+                    <td> <span id="lowerprice">{{ discount.lower_price }}</span></td></tr>
+                <tr>
+                    <td>Discount code:</td>
+                    <td><span id="disccode">{{ discount.code }}</span></td></tr>
+            </table>
+        </div>
+    {% endfor %}
+{% endblock %}
